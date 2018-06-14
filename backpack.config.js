@@ -3,6 +3,8 @@ const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   webpack: (config, options, webpack) => {
+    config.entry.main = ['./src/index.js']
+    config.entry['update-matches'] = ['./src/update-matches.js']
     config.plugins.push(new Dotenv())
     config.module.rules.push({
       test: /\.(graphql|gql)$/,

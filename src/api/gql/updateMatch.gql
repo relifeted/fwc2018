@@ -1,0 +1,42 @@
+mutation($input: UpdateMatchInput!) {
+  updateMatch(input: $input) {
+    id
+    name
+    type
+    homeTeamId
+    awayTeamId
+    homeTeam {
+      id
+      name
+      fifaCode
+      iso2
+      flag
+      emoji
+      emojiString
+    }
+    awayTeam {
+      id
+      name
+      fifaCode
+      iso2
+      flag
+      emoji
+      emojiString
+    }
+    homeResult
+    awayResult
+    dateTime
+    matchDate
+    stadiumId
+    stadium {
+      id
+      name
+      city
+      lat
+      lng
+      image
+    }
+    finished
+    matchday
+  }
+}

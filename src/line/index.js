@@ -1,7 +1,12 @@
 import Debug from 'debug'
 import { LineBot, middleware } from 'bottender'
 
-import { parseIntent, replyTodayMatchLINE } from '../middleware'
+import {
+  parseIntent,
+  replyTodayMatchLINE,
+  replyTomorrowMatchLINE,
+  replyYesterdayMatchLINE,
+} from '../middleware'
 import sessionStore from '../session'
 
 const debug = new Debug('bot:line')
@@ -16,6 +21,8 @@ bot.onEvent(
   middleware([
     parseIntent,
     replyTodayMatchLINE,
+    replyTomorrowMatchLINE,
+    replyYesterdayMatchLINE,
   ])
 )
 

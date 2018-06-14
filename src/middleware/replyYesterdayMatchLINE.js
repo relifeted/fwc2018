@@ -2,12 +2,13 @@ import { Line } from 'messaging-api-line'
 import moment from 'moment'
 
 import * as api from '../api'
+import { isNumber } from 'util'
 
 export default async function handler(context, next) {
-  if (context.intent && context.intent === '今日賽事') {
-    const matches = await api.findTodayMatches()
+  if (context.intent && context.intent === '昨日賽事') {
+    const matches = await api.findYesterdayMatches()
     if (matches && matches.length > 0) {
-      let text = `今日賽事：`
+      let text = `昨日賽事：`
       matches.forEach(match => {
         const { homeTeam, awayTeam, dateTime, homeResult, awayResult } = match
         const homeTeamText = `${homeTeam.name} ${homeTeam.emojiString}`
@@ -25,7 +26,7 @@ export default async function handler(context, next) {
       console.log('message:', message)
       await context.reply([message])
     } else {
-      const message = Line.createText('今天沒有比賽喔')
+      const message = Line.createText('昨天沒有比賽喔')
       console.log('message:', message)
       await context.reply([message])
     }
