@@ -19,7 +19,7 @@ export default async function handler(context, next) {
         const timeText = moment(dateTime)
           .utcOffset('+08:00')
           .format('HH:mm')
-        text = `\n${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
+        text += `\n${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
       })
       const message = Line.createText(text)
       console.log('message:', message)
