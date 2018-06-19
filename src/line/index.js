@@ -3,9 +3,7 @@ import { LineBot, middleware } from 'bottender'
 
 import {
   parseIntent,
-  replyTodayMatchLINE,
-  replyTomorrowMatchLINE,
-  replyYesterdayMatchLINE,
+  replyMatchLINE,
 } from '../middleware'
 import sessionStore from '../session'
 
@@ -20,9 +18,7 @@ const bot = new LineBot({
 bot.onEvent(
   middleware([
     parseIntent,
-    replyTodayMatchLINE,
-    replyTomorrowMatchLINE,
-    replyYesterdayMatchLINE,
+    replyMatchLINE,
   ])
 )
 
