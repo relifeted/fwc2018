@@ -5,6 +5,7 @@ custom:
   defaultStage: dev
   vars: ${file(./config/env.yml)}
   line: ${file(./config/events/line.yml)}
+  updateMatches: ${file(./config/events/update-matches.yml)}
   defaultRole: ${file(./config/defaultRole.yml)}
 
 provider:
@@ -25,6 +26,13 @@ functions:
     timeout: 30
     environment:
     events: ${self:custom.line}
+  updateMatches:
+    handler: build/main.updateMatches
+    memorySize: 1536
+    timeout: 30
+    environment:
+    events: ${self:custom.updateMatches}
+
 
 resources:
   Resources:

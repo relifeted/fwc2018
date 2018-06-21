@@ -1,0 +1,7 @@
+- http:
+    method: GET
+    path: /update-matches
+    integration: lambda
+    cors: true
+    request:
+      passThrough: WHEN_NO_MATCH

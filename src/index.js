@@ -1,4 +1,5 @@
 import { createRequestHandler } from 'bottender-lambda'
+import updateMatchesCommand from './commands/updateMatches'
 
 import bots from './bots'
 
@@ -14,6 +15,12 @@ export const line = (_event, _context, callback) => {
   handler(event, _context, callback)
 }
 
+export const updateMatches = async (_event, _context, callback) => {
+  await updateMatchesCommand()
+  callback()
+}
+
 export default {
   line,
+  updateMatches,
 }
