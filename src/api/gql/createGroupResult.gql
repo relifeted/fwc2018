@@ -1,0 +1,22 @@
+mutation($input: CreateGroupResultInput!) {
+  createGroupResult(input: $input) {
+    groupId
+    group {
+      id
+      name
+    }
+    teamId
+    team {
+      id
+      name
+      flag
+    }
+    points
+    wins
+    draws
+    losses
+    goalsFor
+    goalsAgainst
+    goalDifferential
+  }
+}

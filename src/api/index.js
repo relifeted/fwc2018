@@ -6,6 +6,10 @@ import FIND_MATCH_BY_DATE from './gql/findMatchByDate.gql'
 import GET_MATCH from './gql/getMatch.gql'
 import CREATE_MATCH from './gql/createMatch.gql'
 import UPDATE_MATCH from './gql/updateMatch.gql'
+import GET_GROUP from './gql/getGroup.gql'
+import CREATE_GROUP_RESULT from './gql/createGroupResult.gql'
+import UPDATE_GROUP_RESULT from './gql/updateGroupResult.gql'
+import GET_GROUP_RESULT from './gql/getGroupResult.gql'
 
 export async function findTodayMatches() {
   const today = moment()
@@ -108,5 +112,66 @@ export async function updateMatch(match) {
   }
   const { updateMatch: result } = data
   console.log('updateMatch result:', JSON.stringify(result))
+  return result
+}
+
+export async function getGroup(id) {
+  const { data } = await client.query({
+    query: GET_GROUP,
+    variables: {
+      id: id,
+    },
+  })
+  if (data.errors) {
+    console.log('getGroup errors:', JSON.stringify(data.errors))
+  }
+  const { getGroup: group } = data
+  // console.log('getGroup group:', JSON.stringify(group))
+  return group
+}
+
+export async function createGroupResult(groupResult) {
+  const { data } = await client.mutate({
+    mutation: CREATE_GROUP_RESULT,
+    variables: {
+      input: groupResult,
+    },
+  })
+  if (data.errors) {
+    console.log('createGroupResult errors:', JSON.stringify(data.errors))
+  }
+  const { createGroupResult: result } = data
+  // console.log('createGroupResult result:', JSON.stringify(result))
+  return result
+}
+
+export async function updateGroupResult(groupResult) {
+  const { data } = await client.mutate({
+    mutation: UPDATE_GROUP_RESULT,
+    variables: {
+      input: groupResult,
+    },
+  })
+  if (data.errors) {
+    console.log('updateGroupResult errors:', JSON.stringify(data.errors))
+  }
+  const { updateGroupResult: result } = data
+  // console.log('updateGroupResult result:', JSON.stringify(result))
+  return result
+}
+
+export async function getGroupResult(groupId, teamId) {
+  const { data } = await client.query({
+    query: GET_GROUP_RESULT,
+    variables: {
+      groupId,
+      teamId,
+    },
+  })
+  if (data.errors) {
+    console.log('getGroupResult errors:', JSON.stringify(data.errors))
+  }
+  const { getGroupResult: result } = data
+  // console.log('getGroupResult result:', JSON.stringify(result))
   return result
 }

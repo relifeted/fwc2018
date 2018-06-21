@@ -7,7 +7,7 @@
           "node": "current"
         }
       }
-    ]
+    ], "backpack-core/babel"
   ],
   "plugins": ["transform-runtime"]
 }

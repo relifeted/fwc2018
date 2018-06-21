@@ -1,0 +1,7 @@
+- http:
+    method: GET
+    path: /update-group-results
+    integration: lambda
+    cors: true
+    request:
+      passThrough: WHEN_NO_MATCH

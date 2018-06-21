@@ -1,0 +1,22 @@
+mutation($input: UpdateGroupResultInput!) {
+  updateGroupResult(input: $input) {
+    groupId
+    group {
+      id
+      name
+    }
+    teamId
+    team {
+      id
+      name
+      flag
+    }
+    points
+    wins
+    draws
+    losses
+    goalsFor
+    goalsAgainst
+    goalDifferential
+  }
+}

@@ -1,0 +1,23 @@
+query($id: ID!) {
+  getGroup(id: $id) {
+    id
+    matches {
+      id
+      name
+      homeTeam {
+        id
+        name
+      }
+      awayTeam {
+        id
+        name
+      }
+      homeResult
+      awayResult
+    }
+    teams {
+      id
+      name
+    }
+  }
+}

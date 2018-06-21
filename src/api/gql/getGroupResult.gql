@@ -1,0 +1,22 @@
+query($groupId: ID!, $teamId: ID!) {
+  getGroupResult(groupId: $groupId, teamId: $teamId) {
+    groupId
+    group {
+      id
+      name
+    }
+    teamId
+    team {
+      id
+      name
+      flag
+    }
+    points
+    wins
+    draws
+    losses
+    goalsFor
+    goalsAgainst
+    goalDifferential
+  }
+}

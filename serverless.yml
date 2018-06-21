@@ -6,6 +6,7 @@ custom:
   vars: ${file(./config/env.yml)}
   line: ${file(./config/events/line.yml)}
   updateMatches: ${file(./config/events/update-matches.yml)}
+  updateGroupResults: ${file(./config/events/update-group-results.yml)}
   defaultRole: ${file(./config/defaultRole.yml)}
 
 provider:
@@ -32,6 +33,12 @@ functions:
     timeout: 30
     environment:
     events: ${self:custom.updateMatches}
+  updateGroupResults:
+    handler: build/main.updateGroupResults
+    memorySize: 1536
+    timeout: 30
+    environment:
+    events: ${self:custom.updateGroupResults}
 
 
 resources:
