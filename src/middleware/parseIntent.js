@@ -11,7 +11,7 @@ export default async function handler(context, next) {
   const { text = '' } = context.event
   if (text.indexOf('賽') >= 0) {
     const response = await new Promise((resolve, reject) => {
-      luis.predict(context.event.text, {
+      luis.predict(text, {
         onSuccess: resolve,
         onFailure: reject,
       })
@@ -21,6 +21,6 @@ export default async function handler(context, next) {
       context.intent = response.topScoringIntent.intent
     }
     console.log('context.intent:', context.intent)
-    next()
   }
+  next()
 }

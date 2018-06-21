@@ -1,16 +1,19 @@
 query($id: ID!) {
   getGroup(id: $id) {
     id
+    name
     matches {
       id
       name
       homeTeam {
         id
         name
+        emojiString
       }
       awayTeam {
         id
         name
+        emojiString
       }
       homeResult
       awayResult
@@ -18,6 +21,23 @@ query($id: ID!) {
     teams {
       id
       name
+    }
+    groupResults {
+      groupId
+      teamId
+      team {
+        id
+        name
+        flag
+        emojiString
+      }
+      points
+      wins
+      draws
+      losses
+      goalsFor
+      goalsAgainst
+      goalDifferential
     }
   }
 }

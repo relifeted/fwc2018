@@ -4,6 +4,7 @@ import { LineBot, middleware } from 'bottender'
 import {
   parseIntent,
   replyMatchLINE,
+  replyGroupResultLINE,
 } from '../middleware'
 import sessionStore from '../session'
 
@@ -15,11 +16,6 @@ const bot = new LineBot({
   accessToken: process.env.LINE_ACCESS_TOKEN,
 })
 
-bot.onEvent(
-  middleware([
-    parseIntent,
-    replyMatchLINE,
-  ])
-)
+bot.onEvent(middleware([parseIntent, replyMatchLINE, replyGroupResultLINE]))
 
 export default bot
