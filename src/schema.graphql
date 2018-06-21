@@ -5,6 +5,19 @@
   name: String
   runnerUp: Team
   winner: Team
+  teams: [Team]
+  groupResult: [GroupResult]
+}
+
+type GroupResult {
+  team: Team
+  points: Int
+  wins: Int
+  draws: Int
+  losses: Int
+  goalsFor: Int
+  goalsAgainst: Int
+  goalDifferential: Int
 }
 
 type GroupConnection {
@@ -13,11 +26,13 @@ type GroupConnection {
 }
 
 type Match {
+  awayPenalty: Int
   awayResult: Int
   awayTeam: Team
   awayTeamId: ID
   dateTime: String
   finished: Boolean
+  homePenalty: Int
   homeResult: Int
   homeTeam: Team
   homeTeamId: ID
@@ -127,14 +142,16 @@ input CreateGroupInput {
 }
 
 input CreateMatchInput {
+  awayPenalty: Int
   awayResult: Int
   awayTeamId: ID
-  date: String
   dateTime: String
   finished: Boolean
+  homePenalty: Int
   homeResult: Int
   homeTeamId: ID
   id: ID!
+  matchDate: String
   matchday: Int
   name: Int
   stadiumId: ID
@@ -183,14 +200,19 @@ input UpdateGroupInput {
 }
 
 input UpdateMatchInput {
+  awayPenalty: Int
   awayResult: Int
-  date: String
+  awayTeamId: ID
   dateTime: String
   finished: Boolean
+  homePenalty: Int
   homeResult: Int
+  homeTeamId: ID
   id: ID!
+  matchDate: String
   matchday: Int
   name: Int
+  stadiumId: ID
   type: String
 }
 
