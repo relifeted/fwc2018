@@ -67,7 +67,8 @@ async function produceFlexMessage(matches, texts, noMatchText) {
       body: flexBox,
     }
     matches.sort(matchSort).forEach(match => {
-      const { homeTeam, awayTeam, dateTime, homeResult, awayResult } = match
+      const { homeTeam, awayTeam, dateTime, homeResult, awayResult, group } = match
+      const groupText = `${String.fromCharCode(parseInt(group, 10) + 64)}組`
       const homeTeamText = `${homeTeam.name} ${homeTeam.emojiString}`
       const awayTeamText = `${awayTeam.name} ${awayTeam.emojiString}`
       let resultText = ''
@@ -78,7 +79,7 @@ async function produceFlexMessage(matches, texts, noMatchText) {
         .utcOffset('+08:00')
         .format('HH:mm')
       texts.push(
-        `${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
+        `${groupText} ${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
       )
       const matchContents = [
         {
@@ -128,6 +129,14 @@ async function produceFlexMessage(matches, texts, noMatchText) {
         type: 'box',
         layout: 'vertical',
         contents: [
+          {
+            type: 'text',
+            text: `${groupText}`,
+            size: 'sm',
+            align: 'center',
+            gravity: 'center',
+            flex: 1,
+          },
           {
             type: 'text',
             text: 'V.S.',

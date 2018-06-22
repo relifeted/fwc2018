@@ -5,6 +5,7 @@ query($matchDate: String!) {
     type
     homeTeamId
     awayTeamId
+    group
     homeTeam {
       id
       name
@@ -13,6 +14,7 @@ query($matchDate: String!) {
       flag
       emoji
       emojiString
+      group
     }
     awayTeam {
       id
@@ -22,6 +24,7 @@ query($matchDate: String!) {
       flag
       emoji
       emojiString
+      group
     }
     homeResult
     awayResult

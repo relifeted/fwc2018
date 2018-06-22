@@ -32,14 +32,14 @@ function calculate(group) {
     return newMap
   }, {})
   matches.forEach(match => {
-    const { homeTeam, awayTeam, homeResult, awayResult } = match
-    console.log('homeTeam:', homeTeam.id, homeResult, typeof homeResult)
-    console.log('awayTeam:', awayTeam.id, awayResult, typeof awayResult)
-    const homeGroupResult = groupResultMap[homeTeam.id]
-    const awayGroupResult = groupResultMap[awayTeam.id]
-    updateGoals(homeGroupResult, homeResult, awayResult)
-    updateGoals(awayGroupResult, awayResult, homeResult)
-    if (typeof homeResult === 'number' && typeof awayResult === 'number') {
+    const { homeTeam, awayTeam, homeResult, awayResult, finished } = match
+    if (finished) {
+      console.log('homeTeam:', homeTeam.id, homeResult, typeof homeResult)
+      console.log('awayTeam:', awayTeam.id, awayResult, typeof awayResult)
+      const homeGroupResult = groupResultMap[homeTeam.id]
+      const awayGroupResult = groupResultMap[awayTeam.id]
+      updateGoals(homeGroupResult, homeResult, awayResult)
+      updateGoals(awayGroupResult, awayResult, homeResult)
       if (homeResult > awayResult) {
         homeGroupResult.wins += 1
         awayGroupResult.losses += 1
@@ -50,11 +50,11 @@ function calculate(group) {
         homeGroupResult.draws += 1
         awayGroupResult.draws += 1
       }
+      updatePoints(homeGroupResult)
+      updatePoints(awayGroupResult)
+      console.log('homeGroupResult:', homeGroupResult)
+      console.log('awayGroupResult:', awayGroupResult)
     }
-    updatePoints(homeGroupResult)
-    updatePoints(awayGroupResult)
-    console.log('homeGroupResult:', homeGroupResult)
-    console.log('awayGroupResult:', awayGroupResult)
   })
   return Object.keys(groupResultMap).map(key => groupResultMap[key])
 }
