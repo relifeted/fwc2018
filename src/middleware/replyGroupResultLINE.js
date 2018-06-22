@@ -250,6 +250,10 @@ async function produceFlexMessage(results, title, altText) {
           {
             type: 'text',
             text: title,
+            size: 'xl',
+            align: 'center',
+            gravity: 'center',
+            flex: 1,
           },
         ],
       },

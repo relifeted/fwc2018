@@ -57,6 +57,10 @@ async function produceFlexMessage(matches, texts, noMatchText) {
           {
             type: 'text',
             text: texts[0],
+            size: 'xl',
+            align: 'center',
+            gravity: 'center',
+            flex: 1,
           },
         ],
       },
@@ -180,21 +184,21 @@ export default async function handler(context, next) {
   if (context.intent && context.intent === '今日賽事') {
     const foundMatches = await api.findTodayMatches()
     const matches = [...foundMatches]
-    const texts = ['今日賽事：']
+    const texts = ['今日賽事']
     const message = await produceFlexMessage(matches, texts, '今天沒有比賽喔')
     console.log('message:', JSON.stringify(message))
     await context.reply([message])
   } else if (context.intent && context.intent === '明日賽事') {
     const foundMatches = await api.findTomorrowMatches()
     const matches = [...foundMatches]
-    const texts = ['明日賽事：']
+    const texts = ['明日賽事']
     const message = await produceFlexMessage(matches, texts, '明天沒有比賽喔')
     console.log('message:', JSON.stringify(message))
     await context.reply([message])
   } else if (context.intent && context.intent === '昨日賽事') {
     const foundMatches = await api.findYesterdayMatches()
     const matches = [...foundMatches]
-    const texts = ['昨日賽事：']
+    const texts = ['昨日賽事']
     const message = await produceFlexMessage(matches, texts, '昨天沒有比賽喔')
     console.log('message:', JSON.stringify(message))
     await context.reply([message])
