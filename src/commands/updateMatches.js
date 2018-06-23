@@ -49,7 +49,7 @@ export default async function execute() {
     round_8, // eslint-disable-line
     round_4, // eslint-disable-line
     round_2_loser, // eslint-disable-line
-    round_2 // eslint-disable-line
+    round_2, // eslint-disable-line
   } = knockout
   const round16$ = of(round_16)
     .pipe(map(group => group.matches))
@@ -92,7 +92,7 @@ export default async function execute() {
     .pipe(
       map(([groupMatches, knockoutMatches]) => [
         ...groupMatches,
-        ...knockoutMatches
+        ...knockoutMatches,
       ])
     )
     .pipe(mergeAll())
@@ -128,7 +128,7 @@ export default async function execute() {
       timestamp,
       stadiumId: match.stadium,
       finished: match.finished,
-      matchday: match.matchday
+      matchday: match.matchday,
     }
     switch (updatedMatch.type) {
       case 'round16': {

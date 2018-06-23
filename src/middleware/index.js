@@ -10,5 +10,5 @@ export default {
   parseIntent,
   replyMatchLINE,
   replyGroupResultLINE,
-  hello
+  hello,
 }

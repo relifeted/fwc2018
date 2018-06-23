@@ -3,11 +3,9 @@ extends:
   - "plugin:flowtype/recommended"
   - "prettier"
   - "prettier/flowtype"
-  - "prettier/standard"
 plugins:
   - "flowtype"
   - "prettier"
-  - "standard"
   - import
   - jest
 env:

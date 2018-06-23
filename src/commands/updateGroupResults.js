@@ -7,7 +7,7 @@ function updateGoals(result, goalsFor, goalsAgainst) {
   return {
     ...result,
     goalsFor: result.goalsFor + goalsFor,
-    goalsAgainst: result.goalsAgainst + goalsAgainst
+    goalsAgainst: result.goalsAgainst + goalsAgainst,
   }
 }
 
@@ -15,7 +15,7 @@ function updatePoints(result) {
   return {
     ...result,
     points: result.wins * 3 + result.draws,
-    goalDifferential: result.goalsFor - result.goalsAgainst
+    goalDifferential: result.goalsFor - result.goalsAgainst,
   }
 }
 
@@ -33,7 +33,7 @@ function calculate(group) {
       losses: 0,
       goalsFor: 0,
       goalsAgainst: 0,
-      goalDifferential: 0
+      goalDifferential: 0,
     }
     return newMap
   }, {})

@@ -13,7 +13,7 @@ import sessionStore from '../session'
 const bot = new LineBot({
   sessionStore,
   channelSecret: process.env.LINE_CHANNEL_SECRET,
-  accessToken: process.env.LINE_ACCESS_TOKEN
+  accessToken: process.env.LINE_ACCESS_TOKEN,
 })
 
 bot.onEvent(
@@ -21,7 +21,7 @@ bot.onEvent(
     parseIntent,
     replyMatchLINE,
     replyGroupResultLINE,
-    replyKickoutLINE
+    replyKickoutLINE,
   ])
 )
 
