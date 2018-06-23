@@ -1,359 +1,372 @@
 ﻿input CreateGroupInput {
-  code: String
-  id: ID!
-  name: String
+	code: String
+	id: ID!
+	name: String
 }
 
 input CreateGroupResultInput {
-  groupId: ID!
-  teamId: ID!
-  points: Int
-  wins: Int
-  draws: Int
-  losses: Int
-  goalsFor: Int
-  goalsAgainst: Int
-  goalDifferential: Int
+	groupId: ID!
+	teamId: ID!
+	points: Int
+	wins: Int
+	draws: Int
+	losses: Int
+	goalsFor: Int
+	goalsAgainst: Int
+	goalDifferential: Int
 }
 
 input CreateMatchInput {
-  awayPenalty: Int
-  awayResult: Int
-  awayTeamId: ID
-  finished: Boolean
-  homePenalty: Int
-  homeResult: Int
-  homeTeamId: ID
-  id: ID!
-  dateTime: String
-  matchDate: String
-  matchday: Int
-  timestamp: Int
-  name: Int
-  stadiumId: ID
-  type: String
+	awayPenalty: Int
+	awayResult: Int
+	awayTeamId: ID
+	finished: Boolean
+	homePenalty: Int
+	homeResult: Int
+	homeTeamId: ID
+	id: ID!
+	dateTime: String
+	matchDate: String
+	matchday: Int
+	timestamp: Int
+	name: Int
+	stadiumId: ID
+	type: String
 }
 
 input CreateStadiumInput {
-  city: String
-  id: ID!
-  image: String
-  lat: Float
-  lng: Float
-  name: String
+	city: String
+	id: ID!
+	image: String
+	lat: Float
+	lng: Float
+	name: String
 }
 
 input CreateTeamInput {
-  emoji: String
-  emojiString: String
-  fifaCode: String
-  flag: String
-  id: ID!
-  iso2: String
-  name: String
+	emoji: String
+	emojiString: String
+	fifaCode: String
+	flag: String
+	id: ID!
+	iso2: String
+	name: String
 }
 
 input DeleteGroupInput {
-  id: ID!
+	id: ID!
 }
 
 input DeleteGroupResultInput {
-  groupId: ID!
-  teamId: ID!
+	groupId: ID!
+	teamId: ID!
 }
 
 input DeleteMatchInput {
-  id: ID!
+	id: ID!
 }
 
 input DeleteStadiumInput {
-  id: ID!
+	id: ID!
 }
 
 input DeleteTeamInput {
-  id: ID!
+	id: ID!
 }
 
 type Group {
-  id: ID
-  code: String
-  matchIds: [ID]
-  matches: [Match]
-  name: String
-  winnerId: ID
-  winner: Team
-  runnerUpId: ID
-  runnerUp: Team
-  teamIds: [ID]
-  teams: [Team]
-  groupResults: [GroupResult]
+	id: ID
+	code: String
+	matchIds: [ID]
+	matches: [Match]
+	name: String
+	winnerId: ID
+	winner: Team
+	runnerUpId: ID
+	runnerUp: Team
+	teamIds: [ID]
+	teams: [Team]
+	groupResults: [GroupResult]
 }
 
 type GroupConnection {
-  items: [Group]
-  nextToken: String
+	items: [Group]
+	nextToken: String
 }
 
 type GroupResult {
-  groupId: ID
-  group: Group
-  teamId: ID
-  team: Team
-  points: Int
-  wins: Int
-  draws: Int
-  losses: Int
-  goalsFor: Int
-  goalsAgainst: Int
-  goalDifferential: Int
+	groupId: ID
+	group: Group
+	teamId: ID
+	team: Team
+	points: Int
+	wins: Int
+	draws: Int
+	losses: Int
+	goalsFor: Int
+	goalsAgainst: Int
+	goalDifferential: Int
 }
 
 type GroupResultConnection {
-  items: [GroupResult]
-  nextToken: String
+	items: [GroupResult]
+	nextToken: String
 }
 
 type Match {
-  awayPenalty: Int
-  awayResult: Int
-  awayTeam: Team
-  awayTeamId: ID
-  finished: Boolean
-  homePenalty: Int
-  homeResult: Int
-  homeTeam: Team
-  homeTeamId: ID
-  id: ID
-  dateTime: String
-  matchDate: String
-  matchday: Int
-  timestamp: Int
-  name: Int
-  stadium: Stadium
-  stadiumId: ID
-  type: String
-  group: ID
+	awayPenalty: Int
+	awayResult: Int
+	awayTeam: Team
+	awayTeamId: ID
+	finished: Boolean
+	homePenalty: Int
+	homeResult: Int
+	homeTeam: Team
+	homeTeamId: ID
+	id: ID
+	dateTime: String
+	matchDate: String
+	matchday: Int
+	timestamp: Int
+	name: Int
+	stadium: Stadium
+	stadiumId: ID
+	type: String
+	group: ID
 }
 
 type MatchConnection {
-  items: [Match]
-  nextToken: String
+	items: [Match]
+	nextToken: String
 }
 
 type Mutation {
-  createGroup(input: CreateGroupInput!): Group
-  createMatch(input: CreateMatchInput!): Match
-  createStadium(input: CreateStadiumInput!): Stadium
-  createTeam(input: CreateTeamInput!): Team
-  deleteGroup(input: DeleteGroupInput!): Group
-  deleteMatch(input: DeleteMatchInput!): Match
-  deleteStadium(input: DeleteStadiumInput!): Stadium
-  deleteTeam(input: DeleteTeamInput!): Team
-  updateGroup(input: UpdateGroupInput!): Group
-  updateMatch(input: UpdateMatchInput!): Match
-  updateStadium(input: UpdateStadiumInput!): Stadium
-  updateTeam(input: UpdateTeamInput!): Team
-  createGroupResult(input: CreateGroupResultInput!): GroupResult
-  updateGroupResult(input: UpdateGroupResultInput!): GroupResult
-  deleteGroupResult(input: DeleteGroupResultInput!): GroupResult
+	createGroup(input: CreateGroupInput!): Group
+	createMatch(input: CreateMatchInput!): Match
+	createStadium(input: CreateStadiumInput!): Stadium
+	createTeam(input: CreateTeamInput!): Team
+	deleteGroup(input: DeleteGroupInput!): Group
+	deleteMatch(input: DeleteMatchInput!): Match
+	deleteStadium(input: DeleteStadiumInput!): Stadium
+	deleteTeam(input: DeleteTeamInput!): Team
+	updateGroup(input: UpdateGroupInput!): Group
+	updateMatch(input: UpdateMatchInput!): Match
+	updateStadium(input: UpdateStadiumInput!): Stadium
+	updateTeam(input: UpdateTeamInput!): Team
+	createGroupResult(input: CreateGroupResultInput!): GroupResult
+	updateGroupResult(input: UpdateGroupResultInput!): GroupResult
+	deleteGroupResult(input: DeleteGroupResultInput!): GroupResult
 }
 
 type Query {
-  findMatchByDate(matchDate: String!): [Match]
-  getGroup(id: ID!): Group
-  getMatch(id: ID!): Match
-  getStadium(id: ID!): Stadium
-  getTeam(id: ID!): Team
-  listGroups(after: String, first: Int): GroupConnection
-  listMatches(after: String, first: Int): MatchConnection
-  listStadiums(after: String, first: Int): StadiumConnection
-  listTeams(after: String, first: Int): TeamConnection
-  getGroupResult(groupId: ID!, teamId: ID!): GroupResult
-  listGroupResults(first: Int, after: String): GroupResultConnection
+	findMatchByType(type: String!): [Match]
+	findMatchByDate(matchDate: String!): [Match]
+	getGroup(id: ID!): Group
+	getMatch(id: ID!): Match
+	getStadium(id: ID!): Stadium
+	getTeam(id: ID!): Team
+	listGroups(after: String, first: Int): GroupConnection
+	listMatches(after: String, first: Int): MatchConnection
+	listStadiums(after: String, first: Int): StadiumConnection
+	listTeams(after: String, first: Int): TeamConnection
+	getGroupResult(groupId: ID!, teamId: ID!): GroupResult
+	listGroupResults(first: Int, after: String): GroupResultConnection
 }
 
 type Stadium {
-  city: String
-  id: ID
-  image: String
-  lat: Float
-  lng: Float
-  matches: [Match]
-  name: String
+	city: String
+	id: ID
+	image: String
+	lat: Float
+	lng: Float
+	matches: [Match]
+	name: String
 }
 
 type StadiumConnection {
-  items: [Stadium]
-  nextToken: String
+	items: [Stadium]
+	nextToken: String
 }
 
 type Subscription {
-  onCreateGroup(code: String, id: ID, name: String): Group
-    @aws_subscribe(mutations: ["createGroup"])
-  onCreateMatch(
-    awayResult: Int
-    homeResult: Int
-    id: ID
-    name: Int
-    type: String
-  ): Match @aws_subscribe(mutations: ["createMatch"])
-  onCreateStadium(
-    city: String
-    id: ID
-    lat: Float
-    lng: Float
-    name: String
-  ): Stadium @aws_subscribe(mutations: ["createStadium"])
-  onCreateTeam(
-    fifaCode: String
-    flag: String
-    id: ID
-    iso2: String
-    name: String
-  ): Team @aws_subscribe(mutations: ["createTeam"])
-  onDeleteGroup(code: String, id: ID, name: String): Group
-    @aws_subscribe(mutations: ["deleteGroup"])
-  onDeleteMatch(
-    awayResult: Int
-    homeResult: Int
-    id: ID
-    name: Int
-    type: String
-  ): Match @aws_subscribe(mutations: ["deleteMatch"])
-  onDeleteStadium(
-    city: String
-    id: ID
-    lat: Float
-    lng: Float
-    name: String
-  ): Stadium @aws_subscribe(mutations: ["deleteStadium"])
-  onDeleteTeam(
-    fifaCode: String
-    flag: String
-    id: ID
-    iso2: String
-    name: String
-  ): Team @aws_subscribe(mutations: ["deleteTeam"])
-  onUpdateGroup(code: String, id: ID, name: String): Group
-    @aws_subscribe(mutations: ["updateGroup"])
-  onUpdateMatch(
-    awayResult: Int
-    homeResult: Int
-    id: ID
-    name: Int
-    type: String
-  ): Match @aws_subscribe(mutations: ["updateMatch"])
-  onUpdateStadium(
-    city: String
-    id: ID
-    lat: Float
-    lng: Float
-    name: String
-  ): Stadium @aws_subscribe(mutations: ["updateStadium"])
-  onUpdateTeam(
-    fifaCode: String
-    flag: String
-    id: ID
-    iso2: String
-    name: String
-  ): Team @aws_subscribe(mutations: ["updateTeam"])
-  onCreateGroupResult(
-    groupId: ID
-    teamId: ID
-    points: Int
-    wins: Int
-    draws: Int
-  ): GroupResult @aws_subscribe(mutations: ["createGroupResult"])
-  onUpdateGroupResult(
-    groupId: ID
-    teamId: ID
-    points: Int
-    wins: Int
-    draws: Int
-  ): GroupResult @aws_subscribe(mutations: ["updateGroupResult"])
-  onDeleteGroupResult(
-    groupId: ID
-    teamId: ID
-    points: Int
-    wins: Int
-    draws: Int
-  ): GroupResult @aws_subscribe(mutations: ["deleteGroupResult"])
+	onCreateGroup(code: String, id: ID, name: String): Group
+		@aws_subscribe(mutations: ["createGroup"])
+	onCreateMatch(
+		awayResult: Int,
+		homeResult: Int,
+		id: ID,
+		name: Int,
+		type: String
+	): Match
+		@aws_subscribe(mutations: ["createMatch"])
+	onCreateStadium(
+		city: String,
+		id: ID,
+		lat: Float,
+		lng: Float,
+		name: String
+	): Stadium
+		@aws_subscribe(mutations: ["createStadium"])
+	onCreateTeam(
+		fifaCode: String,
+		flag: String,
+		id: ID,
+		iso2: String,
+		name: String
+	): Team
+		@aws_subscribe(mutations: ["createTeam"])
+	onDeleteGroup(code: String, id: ID, name: String): Group
+		@aws_subscribe(mutations: ["deleteGroup"])
+	onDeleteMatch(
+		awayResult: Int,
+		homeResult: Int,
+		id: ID,
+		name: Int,
+		type: String
+	): Match
+		@aws_subscribe(mutations: ["deleteMatch"])
+	onDeleteStadium(
+		city: String,
+		id: ID,
+		lat: Float,
+		lng: Float,
+		name: String
+	): Stadium
+		@aws_subscribe(mutations: ["deleteStadium"])
+	onDeleteTeam(
+		fifaCode: String,
+		flag: String,
+		id: ID,
+		iso2: String,
+		name: String
+	): Team
+		@aws_subscribe(mutations: ["deleteTeam"])
+	onUpdateGroup(code: String, id: ID, name: String): Group
+		@aws_subscribe(mutations: ["updateGroup"])
+	onUpdateMatch(
+		awayResult: Int,
+		homeResult: Int,
+		id: ID,
+		name: Int,
+		type: String
+	): Match
+		@aws_subscribe(mutations: ["updateMatch"])
+	onUpdateStadium(
+		city: String,
+		id: ID,
+		lat: Float,
+		lng: Float,
+		name: String
+	): Stadium
+		@aws_subscribe(mutations: ["updateStadium"])
+	onUpdateTeam(
+		fifaCode: String,
+		flag: String,
+		id: ID,
+		iso2: String,
+		name: String
+	): Team
+		@aws_subscribe(mutations: ["updateTeam"])
+	onCreateGroupResult(
+		groupId: ID,
+		teamId: ID,
+		points: Int,
+		wins: Int,
+		draws: Int
+	): GroupResult
+		@aws_subscribe(mutations: ["createGroupResult"])
+	onUpdateGroupResult(
+		groupId: ID,
+		teamId: ID,
+		points: Int,
+		wins: Int,
+		draws: Int
+	): GroupResult
+		@aws_subscribe(mutations: ["updateGroupResult"])
+	onDeleteGroupResult(
+		groupId: ID,
+		teamId: ID,
+		points: Int,
+		wins: Int,
+		draws: Int
+	): GroupResult
+		@aws_subscribe(mutations: ["deleteGroupResult"])
 }
 
 type Team {
-  emoji: String
-  emojiString: String
-  fifaCode: String
-  flag: String
-  id: ID
-  iso2: String
-  matches: [Match]
-  name: String
-  group: ID
+	emoji: String
+	emojiString: String
+	fifaCode: String
+	flag: String
+	id: ID
+	iso2: String
+	matches: [Match]
+	name: String
+	group: ID
 }
 
 type TeamConnection {
-  items: [Team]
-  nextToken: String
+	items: [Team]
+	nextToken: String
 }
 
 input UpdateGroupInput {
-  id: ID!
-  code: String
-  name: String
-  winnerId: ID
-  runnerUpId: ID
-  teamIds: [ID]
-  matchIds: [ID]
+	id: ID!
+	code: String
+	name: String
+	winnerId: ID
+	runnerUpId: ID
+	teamIds: [ID]
+	matchIds: [ID]
 }
 
 input UpdateGroupResultInput {
-  groupId: ID!
-  teamId: ID!
-  points: Int
-  wins: Int
-  draws: Int
-  losses: Int
-  goalsFor: Int
-  goalsAgainst: Int
-  goalDifferential: Int
+	groupId: ID!
+	teamId: ID!
+	points: Int
+	wins: Int
+	draws: Int
+	losses: Int
+	goalsFor: Int
+	goalsAgainst: Int
+	goalDifferential: Int
 }
 
 input UpdateMatchInput {
-  awayPenalty: Int
-  awayResult: Int
-  awayTeamId: ID
-  finished: Boolean
-  homePenalty: Int
-  homeResult: Int
-  homeTeamId: ID
-  id: ID!
-  dateTime: String
-  matchDate: String
-  matchday: Int
-  timestamp: Int
-  name: Int
-  stadiumId: ID
-  type: String
-  group: ID
+	awayPenalty: Int
+	awayResult: Int
+	awayTeamId: ID
+	finished: Boolean
+	homePenalty: Int
+	homeResult: Int
+	homeTeamId: ID
+	id: ID!
+	dateTime: String
+	matchDate: String
+	matchday: Int
+	timestamp: Int
+	name: Int
+	stadiumId: ID
+	type: String
+	group: ID
 }
 
 input UpdateStadiumInput {
-  city: String
-  id: ID!
-  image: String
-  lat: Float
-  lng: Float
-  name: String
+	city: String
+	id: ID!
+	image: String
+	lat: Float
+	lng: Float
+	name: String
 }
 
 input UpdateTeamInput {
-  emoji: String
-  emojiString: String
-  fifaCode: String
-  flag: String
-  id: ID!
-  iso2: String
-  name: String
-  group: ID
+	emoji: String
+	emojiString: String
+	fifaCode: String
+	flag: String
+	id: ID!
+	iso2: String
+	name: String
+	group: ID
 }

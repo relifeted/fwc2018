@@ -7,29 +7,29 @@ function matchSort(a, b) {
   return new Date(a.dateTime).getTime() > new Date(b.dateTime).getTime()
 }
 
-// async function produceMessage(matches, texts, noMatchText) {
-//   if (matches && matches.length > 0) {
-//     matches.sort(matchSort).forEach(match => {
-//       const { homeTeam, awayTeam, dateTime, homeResult, awayResult } = match
-//       const homeTeamText = `${homeTeam.name} ${homeTeam.emojiString}`
-//       const awayTeamText = `${awayTeam.name} ${awayTeam.emojiString}`
-//       let resultText = ''
-//       if (typeof homeResult === 'number' && typeof awayResult === 'number') {
-//         resultText = `, 比數 ${homeResult}:${awayResult}`
-//       }
-//       const timeText = moment(dateTime)
-//         .utcOffset('+08:00')
-//         .format('HH:mm')
-//       texts.push(
-//         `${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
-//       )
-//     })
-//     const message = Line.createText(texts.join('\n'))
-//     return message
-//   }
-//   const message = Line.createText(noMatchText)
-//   return message
-// }
+async function produceMessage(matches, texts, noMatchText) {
+  if (matches && matches.length > 0) {
+    matches.sort(matchSort).forEach(match => {
+      const { homeTeam, awayTeam, dateTime, homeResult, awayResult } = match
+      const homeTeamText = `${homeTeam.name} ${homeTeam.emojiString}`
+      const awayTeamText = `${awayTeam.name} ${awayTeam.emojiString}`
+      let resultText = ''
+      if (typeof homeResult === 'number' && typeof awayResult === 'number') {
+        resultText = `, 比數 ${homeResult}:${awayResult}`
+      }
+      const timeText = moment(dateTime)
+        .utcOffset('+08:00')
+        .format('HH:mm')
+      texts.push(
+        `${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
+      )
+    })
+    const message = Line.createText(texts.join('\n'))
+    return message
+  }
+  const message = Line.createText(noMatchText)
+  return message
+}
 
 async function produceFlexMessage(matches, texts, noMatchText) {
   if (matches && matches.length > 0) {

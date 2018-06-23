@@ -1,11 +1,11 @@
 // import Debug from 'debug'
 import { LineBot, middleware } from 'bottender'
 
-import {
-  parseIntent,
-  replyMatchLINE,
-  replyGroupResultLINE,
-} from '../middleware'
+import parseIntent from '../middleware/parseIntent'
+import replyMatchLINE from '../middleware/replyMatchLINE'
+import replyGroupResultLINE from '../middleware/replyGroupResultLINE'
+import replyKickoutLINE from '../middleware/replyKickoutLINE'
+
 import sessionStore from '../session'
 
 // const debug = new Debug('bot:line')
@@ -13,9 +13,16 @@ import sessionStore from '../session'
 const bot = new LineBot({
   sessionStore,
   channelSecret: process.env.LINE_CHANNEL_SECRET,
-  accessToken: process.env.LINE_ACCESS_TOKEN,
+  accessToken: process.env.LINE_ACCESS_TOKEN
 })
 
-bot.onEvent(middleware([parseIntent, replyMatchLINE, replyGroupResultLINE]))
+bot.onEvent(
+  middleware([
+    parseIntent,
+    replyMatchLINE,
+    replyGroupResultLINE,
+    replyKickoutLINE
+  ])
+)
 
 export default bot

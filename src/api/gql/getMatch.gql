@@ -5,6 +5,7 @@ query($id: ID!) {
     type
     homeTeamId
     awayTeamId
+    group
     homeTeam {
       id
       name
@@ -25,17 +26,11 @@ query($id: ID!) {
     }
     homeResult
     awayResult
+    homePenalty
+    awayPenalty
     dateTime
     matchDate
-    stadiumId
-    stadium {
-      id
-      name
-      city
-      lat
-      lng
-      image
-    }
+    timestamp
     finished
     matchday
   }

@@ -1,5 +1,5 @@
-query($matchDate: String!) {
-  findMatchByDate(matchDate: $matchDate) {
+query($type: String!) {
+  findMatchByType(type: $type) {
     id
     name
     type

@@ -11,6 +11,7 @@ import CREATE_GROUP_RESULT from './gql/createGroupResult.gql'
 import UPDATE_GROUP_RESULT from './gql/updateGroupResult.gql'
 import GET_GROUP_RESULT from './gql/getGroupResult.gql'
 import LIST_GROUPS from './gql/listGroups.gql'
+import FIND_MATCH_BY_TYPE from './gql/findMatchByType.gql'
 
 export async function findTodayMatches() {
   const today = moment()
@@ -20,8 +21,8 @@ export async function findTodayMatches() {
   const { data, errors } = await client.query({
     query: FIND_MATCH_BY_DATE,
     variables: {
-      matchDate: today,
-    },
+      matchDate: today
+    }
   })
   if (errors) {
     console.log('findTodayMatches errors:', JSON.stringify(errors))
@@ -40,8 +41,8 @@ export async function findYesterdayMatches() {
   const { data, errors } = await client.query({
     query: FIND_MATCH_BY_DATE,
     variables: {
-      matchDate: yesterday,
-    },
+      matchDate: yesterday
+    }
   })
   if (errors) {
     console.log('findYesterdayMatches errors:', JSON.stringify(errors))
@@ -60,8 +61,8 @@ export async function findTomorrowMatches() {
   const { data, errors } = await client.query({
     query: FIND_MATCH_BY_DATE,
     variables: {
-      matchDate: tomorrow,
-    },
+      matchDate: tomorrow
+    }
   })
   if (errors) {
     console.log('findTomorrowMatches errors:', JSON.stringify(errors))
@@ -75,8 +76,8 @@ export async function getMatch(id) {
   const { data, errors } = await client.query({
     query: GET_MATCH,
     variables: {
-      id,
-    },
+      id
+    }
   })
   if (errors) {
     console.log('getMatch errors:', JSON.stringify(errors))
@@ -90,8 +91,8 @@ export async function createMatch(match) {
   const { data, errors } = await client.mutate({
     mutation: CREATE_MATCH,
     variables: {
-      input: match,
-    },
+      input: match
+    }
   })
   if (errors) {
     console.log('createMatch errors:', JSON.stringify(errors))
@@ -105,8 +106,8 @@ export async function updateMatch(match) {
   const { data, errors } = await client.mutate({
     mutation: UPDATE_MATCH,
     variables: {
-      input: match,
-    },
+      input: match
+    }
   })
   if (errors) {
     console.log('updateMatch errors:', JSON.stringify(errors))
@@ -120,8 +121,8 @@ export async function getGroup(id) {
   const { data, errors } = await client.query({
     query: GET_GROUP,
     variables: {
-      id,
-    },
+      id
+    }
   })
   if (errors) {
     console.log('getGroup errors:', JSON.stringify(errors))
@@ -133,7 +134,7 @@ export async function getGroup(id) {
 
 export async function listGroups() {
   const { data, errors } = await client.query({
-    query: LIST_GROUPS,
+    query: LIST_GROUPS
   })
   if (errors) {
     console.log('listGroups errors:', JSON.stringify(errors))
@@ -148,8 +149,8 @@ export async function createGroupResult(groupResult) {
   const { data, errors } = await client.mutate({
     mutation: CREATE_GROUP_RESULT,
     variables: {
-      input: groupResult,
-    },
+      input: groupResult
+    }
   })
   if (errors) {
     console.log('createGroupResult errors:', JSON.stringify(errors))
@@ -163,8 +164,8 @@ export async function updateGroupResult(groupResult) {
   const { data, errors } = await client.mutate({
     mutation: UPDATE_GROUP_RESULT,
     variables: {
-      input: groupResult,
-    },
+      input: groupResult
+    }
   })
   if (errors) {
     console.log('updateGroupResult errors:', JSON.stringify(errors))
@@ -179,8 +180,8 @@ export async function getGroupResult(groupId, teamId) {
     query: GET_GROUP_RESULT,
     variables: {
       groupId,
-      teamId,
-    },
+      teamId
+    }
   })
   if (errors) {
     console.log('getGroupResult errors:', JSON.stringify(errors))
@@ -188,4 +189,17 @@ export async function getGroupResult(groupId, teamId) {
   const { getGroupResult: result } = data
   // console.log('getGroupResult result:', JSON.stringify(result))
   return result
+}
+
+export async function findMatchByType(type) {
+  const { data, errors } = await client.query({
+    query: FIND_MATCH_BY_TYPE,
+    variables: { type }
+  })
+  if (errors) {
+    console.log('findMatchByType errors:', JSON.stringify(errors))
+  }
+  const { findMatchByType: results } = data
+  // console.log('getGroup group:', JSON.stringify(group))
+  return results
 }
