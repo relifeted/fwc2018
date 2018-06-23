@@ -7,30 +7,29 @@ function matchSort(a, b) {
   return new Date(a.dateTime).getTime() > new Date(b.dateTime).getTime()
 }
 
-async function produceMessage(matches, texts, noMatchText) {
-  if (matches && matches.length > 0) {
-    matches.sort(matchSort).forEach(match => {
-      const { homeTeam, awayTeam, dateTime, homeResult, awayResult } = match
-      const homeTeamText = `${homeTeam.name} ${homeTeam.emojiString}`
-      const awayTeamText = `${awayTeam.name} ${awayTeam.emojiString}`
-      let resultText = ''
-      if (typeof homeResult === 'number' && typeof awayResult === 'number') {
-        resultText = `, 比數 ${homeResult}:${awayResult}`
-      }
-      const timeText = moment(dateTime)
-        .utcOffset('+08:00')
-        .format('HH:mm')
-      texts.push(
-        `${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
-      )
-    })
-    const message = Line.createText(texts.join('\n'))
-    return message
-  } else {
-    const message = Line.createText(noMatchText)
-    return message
-  }
-}
+// async function produceMessage(matches, texts, noMatchText) {
+//   if (matches && matches.length > 0) {
+//     matches.sort(matchSort).forEach(match => {
+//       const { homeTeam, awayTeam, dateTime, homeResult, awayResult } = match
+//       const homeTeamText = `${homeTeam.name} ${homeTeam.emojiString}`
+//       const awayTeamText = `${awayTeam.name} ${awayTeam.emojiString}`
+//       let resultText = ''
+//       if (typeof homeResult === 'number' && typeof awayResult === 'number') {
+//         resultText = `, 比數 ${homeResult}:${awayResult}`
+//       }
+//       const timeText = moment(dateTime)
+//         .utcOffset('+08:00')
+//         .format('HH:mm')
+//       texts.push(
+//         `${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
+//       )
+//     })
+//     const message = Line.createText(texts.join('\n'))
+//     return message
+//   }
+//   const message = Line.createText(noMatchText)
+//   return message
+// }
 
 async function produceFlexMessage(matches, texts, noMatchText) {
   if (matches && matches.length > 0) {
@@ -67,8 +66,19 @@ async function produceFlexMessage(matches, texts, noMatchText) {
       body: flexBox,
     }
     matches.sort(matchSort).forEach(match => {
-      const { homeTeam, awayTeam, dateTime, homeResult, awayResult, group } = match
-      const groupText = `${String.fromCharCode(parseInt(group, 10) + 64)}組`
+      const {
+        homeTeam,
+        awayTeam,
+        dateTime,
+        homeResult,
+        awayResult,
+        group,
+        type,
+      } = match
+      let groupText = ''
+      if (type === 'group') {
+        groupText = `${String.fromCharCode(parseInt(group, 10) + 64)}組`
+      }
       const homeTeamText = `${homeTeam.name} ${homeTeam.emojiString}`
       const awayTeamText = `${awayTeam.name} ${awayTeam.emojiString}`
       let resultText = ''
@@ -183,10 +193,9 @@ async function produceFlexMessage(matches, texts, noMatchText) {
     })
     const message = Line.createFlex(texts.join('\n'), flexContainer)
     return message
-  } else {
-    const message = Line.createText(noMatchText)
-    return message
   }
+  const message = Line.createText(noMatchText)
+  return message
 }
 
 export default async function handler(context, next) {

@@ -8,7 +8,10 @@
     "dev": "npx backpack dev",
     "build": "env NODE_ENV=production npx backpack build",
     "predeploy": "yarn run build",
-    "deploy": "sls deploy"
+    "deploy": "sls deploy",
+    "format": "prettier-eslint --tab-width 2 --trailing-comma es5 --bracket-spacing --no-semi --single-quote --write",
+    "eslint:check": "eslint --print-config .eslintrc.yaml | eslint-config-prettier-check",
+    "lint": "npx eslint -c ./.eslintrc.yaml -f html -o report/eslint.html ."
   },
   "dependencies": {
     "apollo-boost": "^0.1.9",
@@ -32,10 +35,21 @@
     "babel-preset-stage-0": "^6.24.1",
     "backpack-core": "^0.7.0",
     "dotenv-webpack": "^1.5.7",
-    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-airbnb-standard": "^1.6.6",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-import-resolver-babel-module": "~5.0.0-beta.0",
+    "eslint-import-resolver-node": "~0.3.1",
+    "eslint-plugin-flowtype": "^2.49.3",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "graphql-tag": "^2.9.2",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "prettier-eslint-cli": "^4.7.1"
   }
 }

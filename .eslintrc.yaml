@@ -1,0 +1,32 @@
+extends: 
+  - "airbnb-base"
+  - "plugin:flowtype/recommended"
+  - "prettier"
+  - "prettier/flowtype"
+  - "prettier/standard"
+plugins:
+  - "flowtype"
+  - "prettier"
+  - "standard"
+  - import
+  - jest
+env:
+  browser: true
+  node: true
+  amd: true
+  jquery: true
+  es6: true
+  mocha: true
+  jest: true
+parser: babel-eslint
+rules:
+  linebreak-style: ["error", "unix"]
+  no-param-reassign: ["error", {"props": true}]
+  no-plusplus: ["warn"]
+  global-require: ["warn"]
+  class-methods-use-this: ["off"]
+  import/no-unresolved: ["warn"]
+  import/no-named-as-default: ["warn"]
+  import/extensions: ["off"]
+  import/prefer-default-export: ["off"]
+  import/no-extraneous-dependencies: ["error", {"devDependencies": true}]

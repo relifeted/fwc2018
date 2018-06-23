@@ -1,4 +1,4 @@
-import Debug from 'debug'
+// import Debug from 'debug'
 import { LineBot, middleware } from 'bottender'
 
 import {
@@ -8,7 +8,7 @@ import {
 } from '../middleware'
 import sessionStore from '../session'
 
-const debug = new Debug('bot:line')
+// const debug = new Debug('bot:line')
 
 const bot = new LineBot({
   sessionStore,

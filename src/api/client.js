@@ -5,7 +5,7 @@ import fetch from 'node-fetch'
 const auth = {
   type: process.env.APP_SYNC_AUTHENTICATION_TYPE,
   apiKey: process.env.APP_SYNC_API_KEY,
-  jwtToken: async () => token,
+  // jwtToken: async () => token,
 }
 
 const authLink = createAuthLink({

@@ -268,10 +268,9 @@ async function produceFlexMessage(results, title, altText) {
       .forEach(result => produceTeamResult(result, contents))
     const message = Line.createFlex(altText, flexContainer)
     return message
-  } else {
-    const message = Line.createText('沒有戰績 Orz')
-    return message
   }
+  const message = Line.createText('沒有戰績 Orz')
+  return message
 }
 
 export default async function handler(context, next) {

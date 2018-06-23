@@ -18,6 +18,7 @@ export default async function handler(context, next) {
     })
     console.log('luis response:', response)
     if (response.topScoringIntent.score > 0.4) {
+      // eslint-disable-next-line
       context.intent = response.topScoringIntent.intent
     }
     console.log('context.intent:', context.intent)

@@ -30,5 +30,5 @@ export const updateGroupResults = async (_event, _context, callback) => {
 export default {
   line,
   updateMatches,
-  updateGroupResults
+  updateGroupResults,
 }
