@@ -9,7 +9,7 @@
     "build": "env NODE_ENV=production npx backpack build",
     "predeploy": "yarn run build",
     "deploy": "sls deploy",
-    "format": "prettier-eslint --tab-width 2 --trailing-comma es5 --bracket-spacing --no-semi --single-quote --write",
+    "format": "prettier-eslint --write",
     "eslint:check": "eslint --print-config .eslintrc.yaml | eslint-config-prettier-check",
     "lint": "npx eslint -c ./.eslintrc.yaml -f html -o report/eslint.html ."
   },

@@ -44,8 +44,12 @@ function produceTextMessage(matches, title) {
         resultText = `${resultText}, 點球 ${homePenalty}:${awayPenalty}`
       }
     }
-    const timeText = moment(dateTime).utcOffset('+08:00').format(MATCH_TIME_FORMAT)
-    texts.push(`${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`)
+    const timeText = moment(dateTime)
+      .utcOffset('+08:00')
+      .format(MATCH_TIME_FORMAT)
+    texts.push(
+      `${timeText} - ${homeTeamText} 對上 ${awayTeamText}${resultText}`
+    )
   })
   return texts.join('\n')
 }
@@ -207,7 +211,9 @@ function produceMatchResult(match, contents) {
     contents: [
       {
         type: 'text',
-        text: moment(dateTime).utcOffset('+08:00').format(MATCH_TIME_FORMAT),
+        text: moment(dateTime)
+          .utcOffset('+08:00')
+          .format(MATCH_TIME_FORMAT),
         size: 'lg',
         margin: 'xs',
         align: 'start',
