@@ -39,6 +39,19 @@ export default async function execute() {
   }, {})
   const { groups, knockout } = await getData()
   const { a, b, c, d, e, f, g, h } = groups
+
+  const updateGroups = [a, b, c, d, e, f, g, h]
+    .filter(({ winner, runnerup }) => !!winner && !!runnerup)
+    .map(({ winner, runnerup }, index) =>
+      api.updateGroup({
+        id: `${index + 1}`,
+        winnerId: winner,
+        runnerUpId: runnerup,
+      })
+    )
+  const updateGroupResults = await Promise.all(updateGroups)
+  console.log('updateGroupResults:', updateGroupResults)
+
   const groupMatches$ = of(a, b, c, d, e, f, g, h)
     .pipe(map(group => group.matches))
     .pipe(reduce(concatAllArray, []))
@@ -136,7 +149,14 @@ export default async function execute() {
         if (homeTeamId && !Number.isInteger(parseInt(homeTeamId, 10))) {
           const [groupPlace, groupCode] = homeTeamId.split('_')
           const group = groupMap[groupCode]
-          const { id: teamId } = group[groupPlace] || {}
+          let place = groupPlace
+          if (groupPlace === 'winner') {
+            place = 'winner'
+          } else if (groupPlace === 'runner') {
+            place = 'runnerUp'
+          }
+          console.log()
+          const { id: teamId } = group[place] || {}
           if (teamId) {
             updatedMatch.homeTeamId = teamId
           }
@@ -144,7 +164,13 @@ export default async function execute() {
         if (awayTeamId && !Number.isInteger(parseInt(awayTeamId, 10))) {
           const [groupPlace, groupCode] = awayTeamId.split('_')
           const group = groupMap[groupCode]
-          const { id: teamId } = group[groupPlace] || {}
+          let place = groupPlace
+          if (groupPlace === 'winner') {
+            place = 'winner'
+          } else if (groupPlace === 'runner') {
+            place = 'runnerUp'
+          }
+          const { id: teamId } = group[place] || {}
           if (teamId) {
             updatedMatch.awayTeamId = teamId
           }

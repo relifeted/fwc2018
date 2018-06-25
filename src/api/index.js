@@ -12,6 +12,7 @@ import UPDATE_GROUP_RESULT from './gql/updateGroupResult.gql'
 import GET_GROUP_RESULT from './gql/getGroupResult.gql'
 import LIST_GROUPS from './gql/listGroups.gql'
 import FIND_MATCH_BY_TYPE from './gql/findMatchByType.gql'
+import UPDATE_GROUP from './gql/updateGroup.gql'
 
 export async function findTodayMatches() {
   const today = moment()
@@ -202,4 +203,20 @@ export async function findMatchByType(type) {
   const { findMatchByType: results } = data
   // console.log('getGroup group:', JSON.stringify(group))
   return results
+}
+
+export async function updateGroup(group) {
+  console.log('group:', group)
+  const { data, errors } = await client.mutate({
+    mutation: UPDATE_GROUP,
+    variables: {
+      input: group,
+    },
+  })
+  if (errors) {
+    console.log('updateGroup errors:', JSON.stringify(errors))
+  }
+  const { updateGroup: result } = data
+  // console.log('updateGroup result:', JSON.stringify(result))
+  return result
 }

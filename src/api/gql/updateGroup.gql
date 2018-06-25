@@ -1,0 +1,53 @@
+mutation($input: UpdateGroupInput!) {
+  updateGroup(input: $input) {
+    id
+    name
+    winner {
+      id
+      name
+    }
+    runnerUp {
+      id
+      name
+    }
+    matches {
+      id
+      name
+      homeTeam {
+        id
+        name
+        emojiString
+      }
+      awayTeam {
+        id
+        name
+        emojiString
+      }
+      homeResult
+      awayResult
+      finished
+      type
+    }
+    teams {
+      id
+      name
+    }
+    groupResults {
+      groupId
+      teamId
+      team {
+        id
+        name
+        flag
+        emojiString
+      }
+      points
+      wins
+      draws
+      losses
+      goalsFor
+      goalsAgainst
+      goalDifferential
+    }
+  }
+}
