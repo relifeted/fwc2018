@@ -5,12 +5,12 @@ import updateGroupResultsCommand from './commands/updateGroupResults'
 import bots from './bots'
 
 export const line = (_event, _context, callback) => {
-  // console.log('apiw event:', JSON.stringify(_event))
+  console.log('apiw event:', JSON.stringify(_event))
+  console.log('apiw context:', JSON.stringify(_context))
   const handler = createRequestHandler(bots.line)
-  const { context } = _event
   const event = {
-    httpMethod: context['http-method'],
-    body: _event['body-json'],
+    httpMethod: _event.method,
+    body: _event.body,
   }
   console.log('event:', JSON.stringify(event))
   handler(event, _context, callback)
@@ -19,12 +19,18 @@ export const line = (_event, _context, callback) => {
 export const updateMatches = async (_event, _context, callback) => {
   await updateMatchesCommand()
   await updateGroupResultsCommand()
-  callback()
+  callback(null, {
+    statusCode: 200,
+    body: 'OK',
+  })
 }
 
 export const updateGroupResults = async (_event, _context, callback) => {
   await updateGroupResultsCommand()
-  callback()
+  callback(null, {
+    statusCode: 200,
+    body: 'OK',
+  })
 }
 
 export default {
