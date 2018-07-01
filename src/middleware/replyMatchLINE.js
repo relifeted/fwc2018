@@ -141,14 +141,6 @@ async function produceFlexMessage(matches, texts, noMatchText) {
         contents: [
           {
             type: 'text',
-            text: `${groupText}`,
-            size: 'sm',
-            align: 'center',
-            gravity: 'center',
-            flex: 1,
-          },
-          {
-            type: 'text',
             text: 'V.S.',
             size: 'sm',
             align: 'center',

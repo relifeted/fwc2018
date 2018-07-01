@@ -1,0 +1,605 @@
+{
+  "type": "bubble",
+  "styles": {
+    "header": {
+      "backgroundColor": "#eaeaea"
+    },
+    "body": {
+      "backgroundColor": "#eaeaea"
+    }
+  },
+  "header": {
+    "type": "box",
+    "layout": "horizontal",
+    "contents": [
+      {
+        "type": "text",
+        "text": "16強淘汰賽",
+        "size": "xl",
+        "align": "center",
+        "gravity": "center",
+        "flex": 1
+      }
+    ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "horizontal",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "flex": 3,
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 1,
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 1,
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 1,
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "法國",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url":
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+                  },
+                  {
+                    "type": "text",
+                    "text": "阿根廷",
+                    "align": "center",
+                    "gravity": "center",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "flex": 1,
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 1,
+            "contents": [
+              {
+                "type": "image",
+                "align": "center",
+                "gravity": "center",
+                "url":
+                  "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/900px-Flag_of_France.png"
+              },
+              {
+                "type": "text",
+                "text": "法國",
+                "align": "center",
+                "gravity": "center",
+                "wrap": true
+              },
+              {
+                "type": "image",
+                "align": "center",
+                "gravity": "center",
+                "url":
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.png"
+              },
+              {
+                "type": "text",
+                "text": "阿根廷",
+                "align": "center",
+                "gravity": "center",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
