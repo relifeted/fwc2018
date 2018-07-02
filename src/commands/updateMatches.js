@@ -5,10 +5,13 @@ import { map, reduce, mergeAll, toArray } from 'rxjs/operators'
 
 import * as api from '../api'
 
+// const DATA_JSON =
+//   'https://raw.githubusercontent.com/relifeted/fifa-worldcup-2018/master/data.json'
+const DATA_JSON =
+  'https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json'
+
 async function getData() {
-  const { data } = await axios.get(
-    'https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json'
-  )
+  const { data } = await axios.get(DATA_JSON)
   return data
 }
 
