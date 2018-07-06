@@ -268,7 +268,7 @@ async function produceFlexMessage(matches, title, altText) {
 
 export default (async function handler(context, next) {
   const { text = '' } = context.event
-  if (text.match(/16強/)) {
+  if (text.match(/16強/) || text.match(/十六強/)) {
     const round16 = await api.findMatchByType('round16')
     // console.log('round16:', JSON.stringify(round16))
     const title = `16強淘汰賽`
@@ -279,7 +279,7 @@ export default (async function handler(context, next) {
     )
     console.log('message:', JSON.stringify(message))
     await context.reply([message])
-  } else if (text.match(/8強/)) {
+  } else if (text.match(/8強/) || text.match(/八強/)) {
     const round8 = await api.findMatchByType('round8')
     // console.log('round8:', JSON.stringify(round8))
     const title = `8強淘汰賽`
@@ -290,7 +290,7 @@ export default (async function handler(context, next) {
     )
     console.log('message:', JSON.stringify(message))
     await context.reply([message])
-  } else if (text.match(/4強/)) {
+  } else if (text.match(/4強/) || text.match(/四強/)) {
     const round4 = await api.findMatchByType('round4')
     // console.log('round4:', JSON.stringify(round4))
     const title = `4強淘汰賽`
